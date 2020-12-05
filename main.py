@@ -10,7 +10,7 @@ FPS = 60
 WIN_HEIGHT = 800
 WIN_WIDTH = 500
 SCORE_FONT = pygame.font.SysFont("TrebuchetMSBold", 40)
-show_hitbox = False
+show_hitbox = True
 
 pygame.display.set_caption("Asteroids")
 screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
@@ -86,12 +86,12 @@ class Asteroid:
         self.img = asteroid_img
         self.h = asteroid_img.get_height()
         self.w = asteroid_img.get_width()
-        self.hitbox = (self.x + 4, self.y - 5, self.w, self.h)    # Four int values that declare the rectangular hitbox
+        self.hitbox = (self.x + 16, self.y - 5, self.w, self.h)    # Four int values that declare the rectangular hitbox
 
 
 def drop_asteroid(x, y, ast):
-    screen.blit(asteroid_img, (x + 17, y - 5))
-    ast.hitbox = (ast.x + 4, ast.y - 5, ast.w, ast.h)
+    screen.blit(asteroid_img, (x + 16, y - 5))
+    ast.hitbox = (ast.x + 16, ast.y - 5, ast.w, ast.h)
     # Show asteroid hitbox
     if show_hitbox:
         pygame.draw.rect(screen, (255, 0, 0), ast.hitbox, 2)

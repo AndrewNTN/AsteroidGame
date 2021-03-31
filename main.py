@@ -10,7 +10,7 @@ FPS = 60
 WIN_HEIGHT = 800
 WIN_WIDTH = 500
 SCORE_FONT = pygame.font.SysFont("TrebuchetMSBold", 40)
-show_hitbox = True
+show_hitbox = False
 
 pygame.display.set_caption("Asteroids")
 screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
